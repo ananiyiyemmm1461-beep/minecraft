@@ -1,0 +1,1028 @@
+/* =======================================================
+   ÇINAR SURVIVAL STORE
+   Premium Green Theme
+======================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#050505;
+overflow-x:hidden;
+color:white;
+}
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:
+radial-gradient(circle at top,#32CD3233,transparent 60%),
+radial-gradient(circle at bottom,#00ff8833,transparent 60%);
+z-index:-2;
+}
+
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+radial-gradient(#32CD32 1px,transparent 1px);
+background-size:40px 40px;
+opacity:.08;
+animation:bgmove 25s linear infinite;
+z-index:-1;
+}
+
+@keyframes bgmove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(40px);
+
+}
+
+}
+
+/* NAVBAR */
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:18px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(0,0,0,.55);
+
+backdrop-filter:blur(15px);
+
+z-index:999;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+font-size:28px;
+
+font-weight:800;
+
+color:#32CD32;
+
+text-shadow:0 0 15px #32CD32;
+
+}
+
+nav ul{
+
+display:flex;
+
+gap:35px;
+
+list-style:none;
+
+}
+
+nav a{
+
+text-decoration:none;
+
+color:white;
+
+font-weight:600;
+
+transition:.3s;
+
+position:relative;
+
+}
+
+nav a::after{
+
+content:"";
+
+position:absolute;
+
+bottom:-6px;
+
+left:0;
+
+width:0%;
+
+height:2px;
+
+background:#32CD32;
+
+transition:.3s;
+
+}
+
+nav a:hover{
+
+color:#32CD32;
+
+}
+
+nav a:hover::after{
+
+width:100%;
+
+}
+
+/* HEADER */
+
+header{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:50px;
+
+background:
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+url("https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=2000&q=80");
+
+background-size:cover;
+
+background-position:center;
+
+}
+
+.hero{
+
+max-width:900px;
+
+}
+
+.hero h1{
+
+font-size:80px;
+
+font-weight:800;
+
+line-height:90px;
+
+color:white;
+
+text-shadow:
+0 0 10px #32CD32,
+0 0 30px #32CD32,
+0 0 60px #32CD32;
+
+animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+from{
+
+text-shadow:
+0 0 10px #32CD32,
+0 0 20px #32CD32;
+
+}
+
+to{
+
+text-shadow:
+0 0 20px #32CD32,
+0 0 60px #32CD32,
+0 0 120px #32CD32;
+
+}
+
+}
+
+.hero p{
+
+font-size:24px;
+
+margin-top:25px;
+
+opacity:.85;
+
+}
+
+.buttons{
+
+margin-top:45px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.btn{
+
+padding:18px 45px;
+
+border-radius:14px;
+
+font-size:18px;
+
+font-weight:700;
+
+text-decoration:none;
+
+cursor:pointer;
+
+transition:.35s;
+
+}
+
+.green{
+
+background:#32CD32;
+
+color:white;
+
+box-shadow:0 0 25px #32CD32;
+
+}
+
+.green:hover{
+
+transform:translateY(-5px) scale(1.05);
+
+box-shadow:0 0 50px #32CD32;
+
+}
+
+.dark{
+
+background:#111;
+
+border:2px solid #32CD32;
+
+color:white;
+
+}
+
+.dark:hover{
+
+background:#32CD32;
+
+}
+
+/* SECTIONS */
+
+section{
+
+padding:120px 10%;
+
+}
+
+section h2{
+
+text-align:center;
+
+font-size:50px;
+
+margin-bottom:70px;
+
+color:#32CD32;
+
+text-shadow:0 0 20px #32CD32;
+
+/* ===========================
+      VIP CARD
+=========================== */
+
+.vip-card{
+
+max-width:420px;
+
+margin:auto;
+
+background:rgba(255,255,255,.05);
+
+border:1px solid rgba(255,255,255,.08);
+
+backdrop-filter:blur(18px);
+
+border-radius:25px;
+
+padding:45px;
+
+position:relative;
+
+overflow:hidden;
+
+transition:.45s;
+
+box-shadow:
+0 0 40px rgba(50,205,50,.15);
+
+}
+
+.vip-card::before{
+
+content:"";
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+background:#32CD32;
+
+filter:blur(120px);
+
+top:-70px;
+
+right:-70px;
+
+opacity:.25;
+
+transition:.5s;
+
+}
+
+.vip-card:hover{
+
+transform:translateY(-15px);
+
+box-shadow:
+0 0 60px rgba(50,205,50,.5);
+
+}
+
+.vip-card:hover::before{
+
+opacity:.55;
+
+}
+
+.vip-top{
+
+font-size:42px;
+
+font-weight:800;
+
+text-align:center;
+
+margin-bottom:15px;
+
+color:#32CD32;
+
+text-shadow:
+0 0 15px #32CD32;
+
+}
+
+.vip-price{
+
+font-size:65px;
+
+font-weight:800;
+
+text-align:center;
+
+margin:30px 0;
+
+color:white;
+
+}
+
+.vip-price::after{
+
+content:" / Ömür Boyu";
+
+display:block;
+
+font-size:16px;
+
+margin-top:5px;
+
+opacity:.6;
+
+}
+
+.vip-card ul{
+
+list-style:none;
+
+margin:30px 0;
+
+}
+
+.vip-card li{
+
+padding:15px 0;
+
+font-size:18px;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+transition:.3s;
+
+}
+
+.vip-card li:hover{
+
+padding-left:12px;
+
+color:#32CD32;
+
+}
+
+.buy{
+
+display:block;
+
+margin-top:35px;
+
+text-align:center;
+
+padding:18px;
+
+background:linear-gradient(90deg,#32CD32,#20a020);
+
+border-radius:15px;
+
+text-decoration:none;
+
+font-weight:700;
+
+font-size:20px;
+
+color:white;
+
+transition:.35s;
+
+box-shadow:
+0 0 25px rgba(50,205,50,.45);
+
+}
+
+.buy:hover{
+
+transform:scale(1.05);
+
+box-shadow:
+0 0 45px #32CD32;
+
+}
+
+/* ===========================
+      INFO BOXES
+=========================== */
+
+.boxes{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:30px;
+
+}
+
+.box{
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.08);
+
+padding:40px;
+
+border-radius:20px;
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.box::before{
+
+content:"";
+
+position:absolute;
+
+width:120px;
+
+height:120px;
+
+background:#32CD32;
+
+filter:blur(80px);
+
+top:-50px;
+
+right:-50px;
+
+opacity:.18;
+
+}
+
+.box:hover{
+
+transform:translateY(-10px);
+
+border-color:#32CD32;
+
+box-shadow:
+
+0 0 40px rgba(50,205,50,.25);
+
+}
+
+.box h3{
+
+font-size:30px;
+
+margin-bottom:18px;
+
+color:#32CD32;
+
+}
+
+.box p{
+
+font-size:18px;
+
+opacity:.85;
+
+line-height:30px;
+
+}
+
+/* ===========================
+      DISCORD BUTTON
+=========================== */
+
+.discord-btn{
+
+display:inline-block;
+
+margin-top:25px;
+
+padding:18px 45px;
+
+border-radius:15px;
+
+text-decoration:none;
+
+background:#5865F2;
+
+color:white;
+
+font-weight:700;
+
+font-size:20px;
+
+transition:.35s;
+
+box-shadow:
+0 0 30px rgba(88,101,242,.45);
+
+}
+
+.discord-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:
+
+0 0 50px #5865F2;
+
+}
+
+/* ===========================
+      FOOTER
+=========================== */
+
+footer{
+
+margin-top:120px;
+
+padding:50px;
+
+background:#090909;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+text-align:center;
+
+font-size:18px;
+
+opacity:.75;
+
+/* ==========================================
+   PREMIUM EFFECTS - PART 3
+========================================== */
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#080808;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(#32CD32,#1d8f1d);
+border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#44ff44;
+}
+
+/* Sections */
+
+section{
+position:relative;
+overflow:hidden;
+}
+
+section::before{
+
+content:"";
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+background:#32CD32;
+
+filter:blur(180px);
+
+opacity:.08;
+
+top:-180px;
+left:-180px;
+
+pointer-events:none;
+
+}
+
+/* Floating Animation */
+
+@keyframes floating{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.vip-card{
+
+animation:floating 5s ease-in-out infinite;
+
+}
+
+/* Glow Border */
+
+.vip-card::after{
+
+content:"";
+
+position:absolute;
+
+inset:-2px;
+
+border-radius:25px;
+
+padding:2px;
+
+background:
+linear-gradient(
+45deg,
+transparent,
+#32CD32,
+transparent,
+#32CD32,
+transparent
+);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+opacity:0;
+
+transition:.4s;
+
+}
+
+.vip-card:hover::after{
+
+opacity:1;
+
+}
+
+/* Button Shine */
+
+.buy{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.buy::before{
+
+content:"";
+
+position:absolute;
+
+left:-120px;
+
+top:0;
+
+width:70px;
+
+height:100%;
+
+background:rgba(255,255,255,.45);
+
+transform:skewX(-25deg);
+
+transition:.8s;
+
+}
+
+.buy:hover::before{
+
+left:500px;
+
+}
+
+/* Navigation Blur */
+
+nav{
+
+transition:.4s;
+
+}
+
+nav:hover{
+
+background:rgba(0,0,0,.8);
+
+}
+
+/* Hero Fade */
+
+.hero{
+
+animation:fadeHero 1.4s;
+
+}
+
+@keyframes fadeHero{
+
+from{
+
+opacity:0;
+
+transform:translateY(60px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* Boxes */
+
+.box{
+
+cursor:pointer;
+
+}
+
+.box:hover{
+
+transform:translateY(-12px) scale(1.03);
+
+}
+
+/* Text Glow */
+
+h1,h2{
+
+letter-spacing:2px;
+
+}
+
+/* Discord Button */
+
+.discord-btn{
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.discord-btn::before{
+
+content:"";
+
+position:absolute;
+
+top:0;
+
+left:-120px;
+
+width:70px;
+
+height:100%;
+
+background:rgba(255,255,255,.4);
+
+transform:skewX(-25deg);
+
+transition:.8s;
+
+}
+
+.discord-btn:hover::before{
+
+left:450px;
+
+}
+
+/* Hover Scale */
+
+.btn,
+
+.buy,
+
+.discord-btn{
+
+transition:
+transform .35s,
+box-shadow .35s;
+
+}
+
+.btn:hover,
+
+.buy:hover,
+
+.discord-btn:hover{
+
+transform:translateY(-4px);
+
+}
+
+/* Mobile */
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:50px;
+
+line-height:60px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.vip-card{
+
+width:100%;
+
+}
+
+section{
+
+padding:80px 7%;
+
+}
+
+}
+
+/* Background Animation */
+
+body::after{
+
+content:"";
+
+position:fixed;
+
+width:200%;
+
+height:200%;
+
+background:
+radial-gradient(circle,#32CD3211 1px,transparent 1px);
+
+background-size:60px 60px;
+
+animation:stars 45s linear infinite;
+
+z-index:-3;
+
+}
+
+@keyframes stars{
+
+from{
+
+transform:translate(0,0);
+
+}
+
+to{
+
+transform:translate(-250px,-250px);
+
+}
+
+}
