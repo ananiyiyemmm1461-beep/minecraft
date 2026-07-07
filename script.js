@@ -1,58 +1,50 @@
-// =========================
+// =======================================
 // ÇINAR SURVIVAL STORE
-// Premium Script
-// =========================
+// SCRIPT.JS
+// =======================================
 
 // IP Kopyalama
-
 function copyIP(){
 
-navigator.clipboard.writeText("cinarsurvival.ok.redstone.tr");
+const ip="cinarsurvival.ok.redstone.tr";
 
-alert("✔ IP Kopyalandı!\n\ncinarsurvival.ok.redstone.tr");
+navigator.clipboard.writeText(ip);
+
+alert("🎮 IP Kopyalandı!\n\n"+ip);
 
 }
 
-// Smooth Scroll
+// IBAN Kopyalama
+function copyIBAN(){
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
+const iban="TR54 0082 9000 0949 1357 6973 16";
 
-anchor.addEventListener("click",function(e){
+navigator.clipboard.writeText(iban);
 
-e.preventDefault();
+alert("🏦 IBAN Kopyalandı.");
 
-document.querySelector(this.getAttribute("href")).scrollIntoView({
+}
 
-behavior:"smooth"
-
-});
-
-});
-
-});
-
-// Navbar Scroll
-
+// Navbar Scroll Efekti
 window.addEventListener("scroll",()=>{
 
 const nav=document.querySelector("nav");
 
-if(window.scrollY>50){
+if(window.scrollY>40){
 
-nav.style.padding="12px 8%";
-nav.style.background="rgba(0,0,0,.85)";
+nav.style.background="rgba(0,0,0,.9)";
+nav.style.padding="15px 8%";
 
 }else{
 
-nav.style.padding="18px 8%";
-nav.style.background="rgba(0,0,0,.55)";
+nav.style.background="rgba(0,0,0,.75)";
+nav.style.padding="20px 8%";
 
 }
 
 });
 
-// Reveal Animation
-
+// Fade Animasyonu
 const observer=new IntersectionObserver(entries=>{
 
 entries.forEach(entry=>{
@@ -60,7 +52,7 @@ entries.forEach(entry=>{
 if(entry.isIntersecting){
 
 entry.target.style.opacity="1";
-entry.target.style.transform="translateY(0)";
+entry.target.style.transform="translateY(0px)";
 
 }
 
@@ -68,7 +60,7 @@ entry.target.style.transform="translateY(0)";
 
 });
 
-document.querySelectorAll("section,.vip-card,.box").forEach(el=>{
+document.querySelectorAll("section,.vip-card,.payment-card,.info-card,.faq-box").forEach(el=>{
 
 el.style.opacity="0";
 
@@ -80,17 +72,49 @@ observer.observe(el);
 
 });
 
+// Hero Yazısı
+const hero=document.querySelector(".hero h1");
+
+const text=hero.innerText;
+
+hero.innerHTML="";
+
+let i=0;
+
+function type(){
+
+if(i<text.length){
+
+hero.innerHTML+=text.charAt(i);
+
+i++;
+
+setTimeout(type,80);
+
+}
+
+}
+
+type();
+
 // Mouse Glow
 
 const glow=document.createElement("div");
 
 glow.style.position="fixed";
+
 glow.style.width="350px";
+
 glow.style.height="350px";
-glow.style.background="radial-gradient(circle,#32CD3230,transparent 70%)";
-glow.style.pointerEvents="none";
+
 glow.style.borderRadius="50%";
+
+glow.style.pointerEvents="none";
+
+glow.style.background="radial-gradient(circle,#32CD3230,transparent 70%)";
+
 glow.style.transform="translate(-50%,-50%)";
+
 glow.style.zIndex="-1";
 
 document.body.appendChild(glow);
@@ -98,135 +122,8 @@ document.body.appendChild(glow);
 window.addEventListener("mousemove",e=>{
 
 glow.style.left=e.clientX+"px";
+
 glow.style.top=e.clientY+"px";
-
-});
-
-// 3D Tilt
-
-document.querySelectorAll(".vip-card,.box").forEach(card=>{
-
-card.addEventListener("mousemove",e=>{
-
-const rect=card.getBoundingClientRect();
-
-const x=e.clientX-rect.left;
-
-const y=e.clientY-rect.top;
-
-const rx=-(y-rect.height/2)/18;
-
-const ry=(x-rect.width/2)/18;
-
-card.style.transform=`rotateX(${rx}deg) rotateY(${ry}deg) scale(1.05)`;
-
-});
-
-card.addEventListener("mouseleave",()=>{
-
-card.style.transform="rotateX(0) rotateY(0) scale(1)";
-
-});
-
-});
-
-// Typing Effect
-
-const title=document.querySelector(".hero h1");
-
-const text=title.innerText;
-
-title.innerHTML="";
-
-let i=0;
-
-function typing(){
-
-if(i<text.length){
-
-title.innerHTML+=text.charAt(i);
-
-i++;
-
-setTimeout(typing,80);
-
-}
-
-}
-
-typing();
-
-// Floating Background
-
-for(let i=0;i<40;i++){
-
-const dot=document.createElement("div");
-
-dot.style.position="fixed";
-
-dot.style.width=Math.random()*6+2+"px";
-
-dot.style.height=dot.style.width;
-
-dot.style.background="#32CD32";
-
-dot.style.opacity=".2";
-
-dot.style.borderRadius="50%";
-
-dot.style.left=Math.random()*100+"vw";
-
-dot.style.top=Math.random()*100+"vh";
-
-dot.style.animation=`float ${Math.random()*10+8}s linear infinite`;
-
-document.body.appendChild(dot);
-
-}
-
-const style=document.createElement("style");
-
-style.innerHTML=`
-
-@keyframes float{
-
-0%{
-
-transform:translateY(0);
-
-}
-
-100%{
-
-transform:translateY(-120vh);
-
-}
-
-}
-
-`;
-
-document.head.appendChild(style);
-
-// Console
-
-console.log("%cÇınar Survival","font-size:30px;color:#32CD32;font-weight:bold;");
-console.log("%cWebsite by ChatGPT","color:white;");
-// =====================================
-// PREMIUM EFFECTS PART 2
-// =====================================
-
-// Sayfa Yüklenme Efekti
-window.addEventListener("load",()=>{
-
-document.body.style.opacity="0";
-
-setTimeout(()=>{
-
-document.body.style.transition="1s";
-document.body.style.opacity="1";
-
-},100);
 
 });
 
@@ -236,7 +133,7 @@ const topBtn=document.createElement("button");
 
 topBtn.innerHTML="⬆";
 
-topBtn.className="topBtn";
+topBtn.className="topButton";
 
 document.body.appendChild(topBtn);
 
@@ -245,6 +142,7 @@ topBtn.onclick=()=>{
 window.scrollTo({
 
 top:0,
+
 behavior:"smooth"
 
 });
@@ -256,12 +154,10 @@ window.addEventListener("scroll",()=>{
 if(window.scrollY>500){
 
 topBtn.style.opacity="1";
-topBtn.style.pointerEvents="all";
 
 }else{
 
 topBtn.style.opacity="0";
-topBtn.style.pointerEvents="none";
 
 }
 
@@ -269,11 +165,11 @@ topBtn.style.pointerEvents="none";
 
 // CSS
 
-const style2=document.createElement("style");
+const style=document.createElement("style");
 
-style2.innerHTML=`
+style.innerHTML=`
 
-.topBtn{
+.topButton{
 
 position:fixed;
 
@@ -293,106 +189,77 @@ background:#32CD32;
 
 color:white;
 
-font-size:24px;
+font-size:25px;
 
 cursor:pointer;
 
-box-shadow:0 0 25px #32CD32;
+opacity:0;
 
 transition:.35s;
 
-opacity:0;
-
-pointer-events:none;
+box-shadow:0 0 30px #32CD32;
 
 z-index:99999;
 
 }
 
-.topBtn:hover{
+.topButton:hover{
 
 transform:scale(1.15);
-
-box-shadow:0 0 45px #32CD32;
 
 }
 
 `;
 
-document.head.appendChild(style2);
+document.head.appendChild(style);
 
-// Buton Efekti
+// Online Sayısı (mcstatus.io API)
+fetch("https://api.mcstatus.io/v2/status/java/cinarsurvival.ok.redstone.tr")
+.then(res=>res.json())
+.then(data=>{
 
-document.querySelectorAll(".buy,.btn,.discord-btn").forEach(btn=>{
+if(data.online){
 
-btn.addEventListener("mouseenter",()=>{
+document.getElementById("online").innerText=data.players.online;
 
-btn.style.transform="scale(1.08)";
+const player=document.getElementById("playercount");
 
-});
+if(player){
 
-btn.addEventListener("mouseleave",()=>{
+player.innerText=data.players.online+" Oyuncu";
 
-btn.style.transform="scale(1)";
+}
 
-});
+}else{
 
-});
+document.getElementById("online").innerText="0";
 
-// Kart Parlama
+const player=document.getElementById("playercount");
 
-document.querySelectorAll(".vip-card,.box").forEach(card=>{
+if(player){
 
-card.addEventListener("mousemove",(e)=>{
+player.innerText="Sunucu Kapalı";
 
-const rect=card.getBoundingClientRect();
+}
 
-const x=e.clientX-rect.left;
+}
 
-const y=e.clientY-rect.top;
+})
+.catch(()=>{
 
-card.style.background=`
-radial-gradient(circle at ${x}px ${y}px,
-rgba(50,205,50,.28),
-rgba(20,20,20,.92) 70%)
-`;
+document.getElementById("online").innerText="?";
 
-});
+const player=document.getElementById("playercount");
 
-card.addEventListener("mouseleave",()=>{
+if(player){
 
-card.style.background="rgba(255,255,255,.05)";
+player.innerText="Veri Alınamadı";
 
-});
-
-});
-
-// Başlık Dalgalanma
-
-setInterval(()=>{
-
-document.querySelector(".hero h1").style.textShadow=
-
-`0 0 ${Math.random()*35+15}px #32CD32`;
-
-},400);
-
-// Footer Yılı
-
-const footer=document.querySelector("footer");
-
-footer.innerHTML="© "+new Date().getFullYear()+" Çınar Survival | Tüm Hakları Saklıdır.";
-
-// Rastgele Neon
-
-setInterval(()=>{
-
-document.querySelectorAll(".box,.vip-card").forEach(el=>{
-
-el.style.boxShadow=
-
-`0 0 ${Math.random()*25+15}px rgba(50,205,50,.35)`;
+}
 
 });
 
-},2000);
+// Konsol Mesajı
+
+console.log("%cÇınar Survival","font-size:35px;color:#32CD32;font-weight:bold;");
+console.log("%cWebsite Developed","color:white;");
