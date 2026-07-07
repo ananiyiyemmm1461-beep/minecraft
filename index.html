@@ -6,10 +6,15 @@
 
 <title>Çınar Survival | Resmi Mağaza</title>
 
+<meta name="description" content="Çınar Survival Resmi Mağazası">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 <script src="script.js" defer></script>
 
@@ -23,7 +28,9 @@
 
 <div class="logo">
 
-🌲 Çınar Survival
+<i class="fa-solid fa-tree"></i>
+
+Çınar Survival
 
 </div>
 
@@ -31,8 +38,8 @@
 
 <li><a href="#">Ana Sayfa</a></li>
 <li><a href="#vip">VIP</a></li>
-<li><a href="#info">Bilgiler</a></li>
-<li><a href="#discord">Discord</a></li>
+<li><a href="#payment">Ödeme</a></li>
+<li><a href="#about">Sunucu</a></li>
 
 </ul>
 
@@ -50,21 +57,21 @@
 
 <p>
 
-Türkiye'nin En Kaliteli Survival Deneyimi
+Türkiye'nin En Kaliteli Survival Sunucusu
 
 </p>
 
-<div class="buttons">
+<div class="hero-buttons">
 
-<a href="#vip" class="btn green">
+<a href="#vip" class="green-btn">
 
-💎 VIP Satın Al
+💎 VIP SATIN AL
 
 </a>
 
-<button class="btn dark" onclick="copyIP()">
+<button class="dark-btn" onclick="copyIP()">
 
-🎮 IP Kopyala
+🎮 IP KOPYALA
 
 </button>
 
@@ -74,9 +81,61 @@ Türkiye'nin En Kaliteli Survival Deneyimi
 
 </header>
 
-<section id="vip">
+<section class="stats">
+
+<div class="stat">
+
+<h2 id="online">
+
+0
+
+</h2>
+
+<p>
+
+Oyuncu
+
+</p>
+
+</div>
+
+<div class="stat">
 
 <h2>
+
+7/24
+
+</h2>
+
+<p>
+
+Aktif
+
+</p>
+
+</div>
+
+<div class="stat">
+
+<h2>
+
+30₺
+
+</h2>
+
+<p>
+
+VIP
+
+</p>
+
+</div>
+
+</section>
+
+<section id="vip">
+
+<h2 class="title">
 
 💎 VIP PAKETİ
 
@@ -90,7 +149,7 @@ VIP
 
 </div>
 
-<div class="vip-price">
+<div class="price">
 
 30₺
 
@@ -98,15 +157,19 @@ VIP
 
 <ul>
 
-<li>✔ VIP Prefix</li>
-<li>✔ Renkli Sohbet</li>
-<li>✔ Günlük Ödüller</li>
-<li>✔ VIP Kit</li>
-<li>✔ Kozmetik Avantajlar</li>
+<li><i class="fa-solid fa-check"></i> VIP Prefix</li>
+
+<li><i class="fa-solid fa-check"></i> Renkli Sohbet</li>
+
+<li><i class="fa-solid fa-check"></i> VIP Kit</li>
+
+<li><i class="fa-solid fa-check"></i> Günlük Ödül</li>
+
+<li><i class="fa-solid fa-check"></i> Özel Kozmetikler</li>
 
 </ul>
 
-<a href="BURAYA_TEBEX_LINKI" class="buy">
+<a href="#payment" class="buy-btn">
 
 SATIN AL
 
@@ -115,46 +178,149 @@ SATIN AL
 </div>
 
 </section>
+<section id="payment">
 
-<section id="info">
+<h2 class="title">
 
-<h2>
-
-Sunucu Bilgileri
+💳 Ödeme Bilgileri
 
 </h2>
 
-<div class="boxes">
+<div class="payment-card">
 
-<div class="box">
+<h3>
 
-<h3>IP</h3>
+💎 VIP - 30₺
+
+</h3>
+
+<div class="payment-method">
+
+🏦 Havale / EFT
+
+</div>
+
+<p class="pay-text">
+
+Aşağıdaki IBAN'a ödemenizi gönderin.
+
+</p>
+
+<div class="iban-box">
+
+<span id="iban">
+
+TR54 0082 9000 0949 1357 6973 16
+
+</span>
+
+<button onclick="copyIBAN()">
+
+📋 Kopyala
+
+</button>
+
+</div>
+
+<div class="warning-box">
+
+<h4>
+
+⚠️ Dikkat
+
+</h4>
 
 <p>
+
+• Açıklama kısmına Minecraft kullanıcı adınızı yazın.
+
+</p>
+
+<p>
+
+• Ödeme yaptıktan sonra Discord sunucumuzdan ticket açın.
+
+</p>
+
+</div>
+
+<a class="discord-button"
+
+href="https://discord.gg/BURAYA_DISCORD"
+
+target="_blank">
+
+💬 Discord'a Git
+
+</a>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="title">
+
+🎮 Sunucu Bilgileri
+
+</h2>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<i class="fa-solid fa-server"></i>
+
+<h3>
+
+Sunucu IP
+
+</h3>
+
+<p id="serverip">
 
 cinarsurvival.ok.redstone.tr
 
 </p>
 
+<button onclick="copyIP()">
+
+IP'yi Kopyala
+
+</button>
+
 </div>
 
-<div class="box">
+<div class="info-card">
 
-<h3>Sürüm</h3>
+<i class="fa-solid fa-users"></i>
 
-<p>
+<h3>
 
-1.21+
+Oyuncular
+
+</h3>
+
+<p id="playercount">
+
+Yükleniyor...
 
 </p>
 
 </div>
 
-<div class="box">
+<div class="info-card">
 
-<h3>Durum</h3>
+<i class="fa-solid fa-heart"></i>
 
-<p id="status">
+<h3>
+
+Durum
+
+</h3>
+
+<p>
 
 🟢 Aktif
 
@@ -166,27 +332,109 @@ cinarsurvival.ok.redstone.tr
 
 </section>
 
-<section id="discord">
+<section class="faq">
 
-<h2>
+<h2 class="title">
 
-Discord
+❓ Sık Sorulan Sorular
 
 </h2>
 
-<a class="discord-btn"
+<div class="faq-box">
 
-href="#">
+<h3>
 
-Discord'a Katıl
+VIP ne kadar sürer?
 
-</a>
+</h3>
+
+<p>
+
+VIP süresizdir.
+
+</p>
+
+</div>
+
+<div class="faq-box">
+
+<h3>
+
+Ödeme yaptıktan sonra ne yapmalıyım?
+
+</h3>
+
+<p>
+
+Discord sunucumuzdan ticket açıp dekontu paylaşmanız yeterlidir.
+
+</p>
+
+</div>
+
+<div class="faq-box">
+
+<h3>
+
+VIP ne zaman teslim edilir?
+
+</h3>
+
+<p>
+
+Yetkililer en kısa sürede hesabınıza tanımlar.
+
+</p>
+
+</div>
 
 </section>
 
 <footer>
 
+<div class="footer-container">
+
+<h2>
+
+🌲 Çınar Survival
+
+</h2>
+
+<p>
+
+Türkiye'nin Kaliteli Survival Sunucusu
+
+</p>
+
+<div class="footer-links">
+
+<a href="#vip">
+
+VIP
+
+</a>
+
+<a href="#payment">
+
+Ödeme
+
+</a>
+
+<a href="#about">
+
+Sunucu
+
+</a>
+
+</div>
+
+<p class="copyright">
+
 © 2026 Çınar Survival
+
+</p>
+
+</div>
 
 </footer>
 
