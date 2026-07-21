@@ -1,0 +1,773 @@
+/* ===========================
+   ÇINAR SURVIVAL STORE
+=========================== */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#090909;
+color:#fff;
+overflow-x:hidden;
+}
+
+a{
+text-decoration:none;
+color:white;
+}
+
+#particles{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-2;
+background:
+radial-gradient(circle at 20% 20%,rgba(50,205,50,.08),transparent 35%),
+radial-gradient(circle at 80% 80%,rgba(50,205,50,.08),transparent 35%);
+}
+
+nav{
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+padding:20px 8%;
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+background:rgba(0,0,0,.75);
+
+backdrop-filter:blur(15px);
+
+z-index:999;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.logo{
+
+font-size:30px;
+
+font-weight:800;
+
+color:#32CD32;
+
+text-shadow:0 0 20px #32CD32;
+
+}
+
+nav ul{
+
+display:flex;
+
+list-style:none;
+
+gap:35px;
+
+}
+
+nav ul li a{
+
+transition:.35s;
+
+font-weight:600;
+
+}
+
+nav ul li a:hover{
+
+color:#32CD32;
+
+}
+
+header{
+
+height:100vh;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+text-align:center;
+
+padding:40px;
+
+background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,.85));
+
+}
+
+.hero h1{
+
+font-size:85px;
+
+font-weight:800;
+
+text-shadow:0 0 35px #32CD32;
+
+}
+
+.hero p{
+
+margin-top:20px;
+
+font-size:24px;
+
+opacity:.8;
+
+}
+
+.hero-buttons{
+
+margin-top:40px;
+
+display:flex;
+
+justify-content:center;
+
+gap:20px;
+
+flex-wrap:wrap;
+
+}
+
+.green-btn,
+.dark-btn,
+.buy-btn,
+.discord-button{
+
+padding:18px 40px;
+
+border:none;
+
+border-radius:15px;
+
+font-size:18px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.35s;
+
+display:inline-block;
+
+}
+
+.green-btn{
+
+background:#32CD32;
+
+box-shadow:0 0 25px #32CD32;
+
+}
+
+.green-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 0 45px #32CD32;
+
+}
+
+.dark-btn{
+
+background:#161616;
+
+border:2px solid #32CD32;
+
+color:white;
+
+}
+
+.dark-btn:hover{
+
+background:#32CD32;
+
+}
+
+section{
+
+padding:120px 10%;
+
+}
+
+.title{
+
+text-align:center;
+
+font-size:48px;
+
+color:#32CD32;
+
+margin-bottom:60px;
+
+text-shadow:0 0 20px #32CD32;
+
+}
+
+.stats{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:30px;
+
+margin-top:-80px;
+
+}
+
+.stat{
+
+background:#111;
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+}
+
+.stat:hover{
+
+transform:translateY(-8px);
+
+border-color:#32CD32;
+
+}
+
+.stat h2{
+
+font-size:42px;
+
+color:#32CD32;
+
+margin-bottom:10px;
+
+}
+
+.vip-card{
+
+max-width:450px;
+
+margin:auto;
+
+background:#111;
+
+padding:45px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+box-shadow:0 0 35px rgba(50,205,50,.15);
+
+}
+
+.vip-card:hover{
+
+transform:translateY(-12px);
+
+box-shadow:0 0 60px rgba(50,205,50,.45);
+
+}
+
+.vip-top{
+
+font-size:42px;
+
+font-weight:800;
+
+color:#32CD32;
+
+text-align:center;
+
+}
+
+.price{
+
+font-size:70px;
+
+text-align:center;
+
+margin:30px 0;
+
+font-weight:800;
+
+}
+
+.vip-card ul{
+
+list-style:none;
+
+}
+
+.vip-card li{
+
+padding:15px 0;
+
+border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.buy-btn{
+
+margin-top:35px;
+
+background:#32CD32;
+
+width:100%;
+
+text-align:center;
+
+/* ===========================
+      PAYMENT
+=========================== */
+
+.payment-card{
+
+max-width:850px;
+
+margin:auto;
+
+background:rgba(255,255,255,.05);
+
+backdrop-filter:blur(20px);
+
+padding:50px;
+
+border-radius:25px;
+
+border:1px solid rgba(255,255,255,.08);
+
+box-shadow:0 0 40px rgba(50,205,50,.15);
+
+transition:.4s;
+
+}
+
+.payment-card:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 0 60px rgba(50,205,50,.35);
+
+}
+
+.payment-card h3{
+
+font-size:42px;
+
+text-align:center;
+
+margin-bottom:25px;
+
+color:#32CD32;
+
+}
+
+.payment-method{
+
+width:240px;
+
+margin:20px auto;
+
+padding:15px;
+
+border-radius:12px;
+
+background:#32CD32;
+
+text-align:center;
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#fff;
+
+}
+
+.pay-text{
+
+text-align:center;
+
+font-size:18px;
+
+opacity:.8;
+
+margin-bottom:25px;
+
+}
+
+.iban-box{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+gap:15px;
+
+padding:20px;
+
+background:#0f0f0f;
+
+border:2px solid #32CD32;
+
+border-radius:15px;
+
+margin-bottom:30px;
+
+flex-wrap:wrap;
+
+}
+
+#iban{
+
+font-size:22px;
+
+font-weight:bold;
+
+color:#32CD32;
+
+word-break:break-all;
+
+}
+
+.iban-box button{
+
+padding:14px 22px;
+
+border:none;
+
+background:#32CD32;
+
+color:white;
+
+font-weight:bold;
+
+border-radius:10px;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.iban-box button:hover{
+
+transform:scale(1.08);
+
+}
+
+.warning-box{
+
+background:#181818;
+
+border-left:5px solid orange;
+
+padding:25px;
+
+border-radius:10px;
+
+margin:30px 0;
+
+}
+
+.warning-box h4{
+
+margin-bottom:10px;
+
+color:orange;
+
+}
+
+.warning-box p{
+
+margin:10px 0;
+
+line-height:28px;
+
+}
+
+/* ===========================
+      INFO
+=========================== */
+
+.info-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+
+gap:30px;
+
+}
+
+.info-card{
+
+background:#121212;
+
+padding:35px;
+
+border-radius:20px;
+
+text-align:center;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.4s;
+
+}
+
+.info-card:hover{
+
+transform:translateY(-10px);
+
+border-color:#32CD32;
+
+box-shadow:0 0 35px rgba(50,205,50,.35);
+
+}
+
+.info-card i{
+
+font-size:50px;
+
+color:#32CD32;
+
+margin-bottom:20px;
+
+}
+
+.info-card h3{
+
+font-size:30px;
+
+margin-bottom:15px;
+
+}
+
+.info-card p{
+
+font-size:20px;
+
+margin-bottom:20px;
+
+}
+
+.info-card button{
+
+padding:15px 25px;
+
+border:none;
+
+background:#32CD32;
+
+color:white;
+
+font-weight:bold;
+
+border-radius:10px;
+
+cursor:pointer;
+
+}
+
+/* ===========================
+      FAQ
+=========================== */
+
+.faq-box{
+
+max-width:900px;
+
+margin:25px auto;
+
+background:#121212;
+
+padding:30px;
+
+border-radius:18px;
+
+border:1px solid rgba(255,255,255,.08);
+
+transition:.35s;
+
+}
+
+.faq-box:hover{
+
+border-color:#32CD32;
+
+}
+
+.faq-box h3{
+
+margin-bottom:15px;
+
+color:#32CD32;
+
+}
+
+.faq-box p{
+
+line-height:30px;
+
+opacity:.9;
+
+}
+
+/* ===========================
+      FOOTER
+=========================== */
+
+footer{
+
+margin-top:100px;
+
+background:#080808;
+
+border-top:1px solid rgba(255,255,255,.08);
+
+padding:60px 10%;
+
+}
+
+.footer-container{
+
+text-align:center;
+
+}
+
+.footer-container h2{
+
+color:#32CD32;
+
+font-size:40px;
+
+margin-bottom:15px;
+
+}
+
+.footer-container p{
+
+opacity:.75;
+
+margin:15px 0;
+
+}
+
+.footer-links{
+
+margin:30px 0;
+
+display:flex;
+
+justify-content:center;
+
+gap:30px;
+
+flex-wrap:wrap;
+
+}
+
+.footer-links a{
+
+transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+color:#32CD32;
+
+}
+
+copyright{
+
+opacity:.5;
+
+}
+
+/* ===========================
+      RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.hero h1{
+
+font-size:55px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+nav{
+
+flex-direction:column;
+
+gap:20px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.stats{
+
+grid-template-columns:1fr;
+
+}
+
+.payment-card{
+
+padding:30px;
+
+}
+
+.iban-box{
+
+flex-direction:column;
+
+text-align:center;
+
+}
+
+}
